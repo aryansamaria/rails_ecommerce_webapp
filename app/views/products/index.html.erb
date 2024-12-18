@@ -1,0 +1,13 @@
+<h1 class="text-center mt-5">Products <br><%= link_to "New product", new_product_path, class: "btn btn-success ml-5" if authenticated? %></h1>
+
+<div id="products" class="row">
+  <% @products.each do |product| %>
+    <div class="col-2 bg-light m-auto mt-5">
+      <div class="card text-center">
+      	<a href="/products/<%= product.id %>" class="btn btn-secondary">
+        <%= product.name %>
+      </a>
+      </div>
+    </div>
+  <% end %>
+</div>

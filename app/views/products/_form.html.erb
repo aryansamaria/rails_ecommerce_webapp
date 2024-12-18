@@ -1,0 +1,33 @@
+<%= form_with model: product, local: true do |form| %>
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto"> 
+      <div class="card shadow-lg"> 
+        <div class="card-header text-center bg-secondary text-white"> 
+          <h5>Product Form</h5>
+        </div>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <%= form.label :name, "Product Name", class: "form-label" %>
+            <%= form.text_field :name, class: "form-control", placeholder: "Enter product name" %>
+          </div>
+          <div class="mb-3">
+           <%= form.label :inventory_count, "Inventory Count", class: "form-label" %>
+            <%= form.number_field :inventory_count, class: "form-control", placeholder: "Enter inventory count" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :description, "Description", class: "form-label" %>
+            <%= form.rich_text_area :description, class: "form-control", placeholder: "Enter product description" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :featured_image, "Featured Image", class: "form-label" %>
+            <%= form.file_field :featured_image, class: "form-control", accept: "image/*" %>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <%= form.submit "Submit", class: "btn btn-secondary w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+
+<%= form_with url: registration_url do |form| %>
+  <div class="row">
+    <div class="col-4 m-auto mt-5">
+        <div class="card">
+            <div class="card-header text-center">login|signup</div>
+            <div class="card-body text-center"><label>Enter Your Email :</label> <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "email address", value: params[:email_address] %><br><br>
+              <label>Enter a Password :</label> <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "password", maxlength: 20 %></div>
+            <div class="card-footer text-center"> <%= form.submit "Sign up" %></div>
+        </div>
+    </div>
+</div>
+ 
+<% end %>
+<br>
+
+
